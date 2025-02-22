@@ -54,7 +54,3 @@ aggregating["Max Infection Rate"] = max_infection_rates
 # Display the updated dataset
 print("\nAggregated Data with Max Infection Rates:")
 print(aggregating.head())
-
-# Save the cleaned dataset for GitHub upload
-aggregating.to_csv("covid19_analysis_results.csv")
-print("\nProcessed data saved as 'covid19_analysis_results.csv'.")
