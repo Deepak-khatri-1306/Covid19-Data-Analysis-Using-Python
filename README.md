@@ -1,56 +1,35 @@
-# Covid19-Data-Analysis-Using-Python
-import pandas as pd
-import numpy as np
-import seaborn as sns
-import matplotlib.pyplot as plt
+# COVID-19 Data Analysis Using Python
+## Overview
+This project analyzes COVID-19 confirmed cases data using Python. It includes data processing, aggregation, and visualization to understand infection trends across different countries.
 
-# Display message indicating modules are imported
-print('Modules are imported.')
+## Data Processing
+- Imported necessary libraries: `pandas`, `numpy`, `matplotlib.pyplot`, `seaborn`.
+- Loaded the dataset from `covid19_Confirmed_dataset.csv`.
+- Displayed basic dataset information: shape, info, and statistical summary.
+- Removed the 'S.No' column to clean the dataset.
+- Aggregated data by country for further analysis.
 
-# Load the dataset
-df = pd.read_csv('covid19_Confirmed_dataset.csv')
+## Exploratory Data Analysis (EDA)
+### Dataset Overview
+- The dataset consists of COVID-19 confirmed cases by country and day.
+- Aggregated country-level data to analyze trends.
 
-# Display basic dataset information
-print("Dataset Preview:")
-print(df.head())
-print(df.tail())
-print("\nDataset Shape:", df.shape)
-print("\nDataset Info:")
-df.info()
-print("\nStatistical Summary:")
-print(df.describe())
+### Visualization of COVID-19 Cases
+- Plotted COVID-19 cases for **China, Italy, and Spain** to observe infection trends over time.
+- **Visualizations:**
+  - Line plot showing the number of cases over time for selected countries.
 
-# Remove the 'S.No' column (if it exists)
-df = df.iloc[:, 1:]
-print("\nUpdated Dataset Preview:")
-print(df.head(2))
+### Maximum Infection Rate Calculation
+- Computed the **maximum daily infection rate** for each country by calculating the daily difference in cases.
+- Added a new column `Max Infection Rate` to the aggregated dataset.
 
-# Display dataset columns
-print("\nDataset Columns:")
-print(df.columns)
+## Conclusion
+- The project provides insights into COVID-19 trends, showing how cases evolved in different countries.
+- **China, Italy, and Spain** were analyzed to observe peaks and infection growth patterns.
+- Maximum infection rates help in understanding the severity of outbreaks in different regions.
 
-# Aggregate data by country
-aggregating = df.groupby("Country/Region").sum()
-print("\nAggregated Data Preview:")
-print(aggregating.head())
-print("\nAggregated Data Shape:", aggregating.shape)
-
-# Visualizing COVID-19 cases for selected countries
-plt.figure(figsize=(12, 6))
-plt.plot(aggregating.loc["China"], label="China")
-plt.plot(aggregating.loc["Italy"], label="Italy")
-plt.plot(aggregating.loc["Spain"], label="Spain")
-plt.xlabel("Days")
-plt.ylabel("Number of Cases")
-plt.title("COVID-19 Cases in China, Italy, and Spain")
-plt.legend()
-plt.show()
-
-# Find the maximum infection rate for all countries
-countries = list(aggregating.index)
-max_infection_rates = [aggregating.loc[c].diff().max() for c in countries]
-aggregating["Max Infection Rate"] = max_infection_rates
-
-# Display the updated dataset
-print("\nAggregated Data with Max Infection Rates:")
-print(aggregating.head())
+## Visualization for GitHub
+To enhance the repository, consider adding:
+1. A **heatmap** showing infection rates across different countries.
+2. A **bar chart** displaying maximum infection rates for the top affected countries.
+3. A **time-series plot** of confirmed cases globally.
