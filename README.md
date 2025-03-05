@@ -27,9 +27,3 @@ This project analyzes COVID-19 confirmed cases data using Python. It includes da
 - The project provides insights into COVID-19 trends, showing how cases evolved in different countries.
 - **China, Italy, and Spain** were analyzed to observe peaks and infection growth patterns.
 - Maximum infection rates help in understanding the severity of outbreaks in different regions.
-
-## Visualization for GitHub
-To enhance the repository, consider adding:
-1. A **heatmap** showing infection rates across different countries.
-2. A **bar chart** displaying maximum infection rates for the top affected countries.
-3. A **time-series plot** of confirmed cases globally.
