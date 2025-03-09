@@ -1,4 +1,4 @@
-# COVID-19 Data Analysis Using Python
+# COVID-19 Data Analysis
 ## Overview
 This project analyzes COVID-19 confirmed cases data using Python. It includes data processing, aggregation, and visualization to understand infection trends across different countries.
 
